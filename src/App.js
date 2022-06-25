@@ -1,19 +1,17 @@
-import Login from "./components/Login/Login";
-import Successfully from "./components/Login/Successfully";
-import LostPassword from "./components/Login/LostPassword";
-
-import PlayerPage from "./components/Login/PlayerPage";
-
+import Login from './components/Login'
+import Successfully from './components/Successfully'
+import LostPassword from './components/LostPassword'
+import PlayerPage from './components/PlayerPage'
 
 function App() {
-  return (
-    <div>
-      <Login />
-      <LostPassword />
-      <Successfully />
-      <PlayerPage />
-    </div>
-  );
+	return (
+		<div>
+			<Login />
+			<LostPassword />
+			<Successfully />
+			<PlayerPage />
+		</div>
+	)
 }
 
-export default App;
+export default App
