@@ -84,16 +84,11 @@ const Form = styled.form`
 `
 
 const Button = styled.button`
+	background-color: #3aa0ff;
 	margin: 20px 0;
 	max-width: 339px;
 	width: 100%;
 	height: 41px;
-	background: linear-gradient(
-		90deg,
-		#3aa0ff 0%,
-		#137cf9 52.76%,
-		#0152f9 103.37%
-	);
 	border-radius: 16px;
 	font-family: 'Montserrat';
 	font-style: normal;
@@ -102,13 +97,19 @@ const Button = styled.button`
 	line-height: 18px;
 	color: white;
 	border: none;
-    @media(max-width: 420px) {
-        max-width: 265px;
+	:hover {
+		background-color: #137cf9;
+	}
+	:active {
+		background-color: #0152f9;
+	}
+	@media (max-width: 420px) {
+		max-width: 265px;
 		width: 100%;
 		height: 24px;
 		font-size: 9.04942px;
 		line-height: 11px;
-    }
+	}
 `
 
 export default LostPassword

@@ -148,12 +148,6 @@ const Text = styled.p`
 `
 
 const Button = styled.button`
-	/* background: linear-gradient(
-		90deg,
-		#3aa0ff 0%,
-		#137cf9 52.76%,
-		#0152f9 103.37%
-	); */
 	background-color: #3aa0ff;
 	border-radius: 16px;
 	max-width: 329px;
