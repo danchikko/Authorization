@@ -1,5 +1,5 @@
 import classes from './PlayerPage.module.css'
-import player from '../../aseets/images/player.webp'
+import player from '../aseets/images/player.webp'
 
 const PlayerPage = () => {
 	return (
