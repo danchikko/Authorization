@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const LostPassword = () => {
 	const [email, setEmail] = useState('')
-	const [emailInValid, setEmailInValid] = useState()
+	const [emailInValid, setEmailInValid] = useState(false)
 	const navigate = useNavigate()
 
 	const emailChangeHandler = (e) => {
@@ -23,6 +23,7 @@ const LostPassword = () => {
 			navigate("/successfully", {replace: true})
 		}
 	}
+	console.log(emailInValid)
 
 	return (
 		<Container>
@@ -34,7 +35,7 @@ const LostPassword = () => {
 						type='email'
 						value={email}
 						placeholder='sanekya_san@mail.ru'
-						onClick={emailChangeHandler}
+						onChange={emailChangeHandler}
 					/>
 					<Button>Отправить письмо</Button>
 				</Form>

@@ -32,7 +32,6 @@ const Login = () => {
 	const submitHandler = (event) => {
 		event.preventDefault()
 		if (formValid === true) {
-			console.log('true')
 			navigate('/successfully', { replace: true })
 		} else {
 			console.log('false')
@@ -46,9 +45,7 @@ const Login = () => {
 			setFormValid(false)
 		}
 	}, [checkEmail, checkPassword])
-	console.log(formValid)
-	console.log(checkEmail)
-	console.log(checkPassword)
+
 	return (
 		<Container>
 			<Main>
