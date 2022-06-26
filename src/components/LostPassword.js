@@ -1,13 +1,41 @@
+import { useState } from 'react'
 import styled from 'styled-components'
+import { validEmailRegex } from '../helpers/constants'
+import { useNavigate } from 'react-router-dom'
 
 const LostPassword = () => {
+	const [email, setEmail] = useState('')
+	const [emailInValid, setEmailInValid] = useState()
+	const navigate = useNavigate()
+
+	const emailChangeHandler = (e) => {
+		setEmail(e.target.value)
+		if (!validEmailRegex.test(String(e.target.value).toLowerCase())) {
+			setEmailInValid(false)
+		} else {
+			setEmailInValid(true)
+		}
+	}
+
+	const submitHandler = (e) => {
+		e.preventDefault()
+		if(emailInValid === true) {
+			navigate("/successfully", {replace: true})
+		}
+	}
+
 	return (
 		<Container>
 			<Main>
 				<MainTitle>Забыли пароль?</MainTitle>
-				<Form>
+				<Form onSubmit={submitHandler}>
 					<label>Введите свой email:</label>
-					<input type='email' placeholder='sanekya_san@mail.ru' />
+					<input
+						type='email'
+						value={email}
+						placeholder='sanekya_san@mail.ru'
+						onClick={emailChangeHandler}
+					/>
 					<Button>Отправить письмо</Button>
 				</Form>
 			</Main>

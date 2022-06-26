@@ -1,6 +1,8 @@
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 const Successfully = () => {
+	const navigate = useNavigate()
 	return (
 		<Container>
 			<Main>
@@ -9,7 +11,13 @@ const Successfully = () => {
 					Проверьте свою почту на наличие сообщения о востановлении
 					пароля и пройдите все шаги что написаны в письме
 				</Text>
-				<Button>Войти</Button>
+				<Button
+					onClick={() => {
+						navigate("/play", {replace: true})
+					}}
+				>
+					Войти
+				</Button>
 			</Main>
 		</Container>
 	)
@@ -36,7 +44,7 @@ const Title = styled.h2`
 	font-weight: 600;
 	font-size: 50px;
 	line-height: 61px;
-	@media(max-width: 420px) {
+	@media (max-width: 420px) {
 		font-size: 30px;
 		line-height: 37px;
 	}
@@ -47,7 +55,7 @@ const Text = styled.p`
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 22px;
-	@media(max-width: 420px) {
+	@media (max-width: 420px) {
 		font-size: 10px;
 		line-height: 12px;
 	}
@@ -72,7 +80,7 @@ const Button = styled.button`
 	:active {
 		background-color: #0152f9;
 	}
-	@media(max-width: 420px) {
+	@media (max-width: 420px) {
 		max-width: 265px;
 		width: 100%;
 		height: 24px;

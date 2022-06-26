@@ -1,13 +1,19 @@
-import player from '../aseets/images/player.webp'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 const PlayerPage = () => {
+	const navigate = useNavigate()
+
 	return (
 		<Container>
-			<Player>
-				<Logo src={player} alt='player' />
-			</Player>
-			<Button>Выйти</Button>
+			<Play>
+				<video width="100%" height="100%" controls>
+					<source src='https://media.w3.org/2010/05/sintel/trailer_hd.mp4' type='video/mp4' />
+				</video>
+			</Play>
+			<Button onClick={() => {
+				navigate('/', {replace: true})
+			}}>Выйти</Button>
 		</Container>
 	)
 }
@@ -21,7 +27,7 @@ const Container = styled.div`
 	padding: 0 20px;
 `
 
-const Player = styled.div`
+const Play = styled.div`
 	margin: 170px 0 0 0;
 	max-width: 1280px;
 	width: 100%;
@@ -37,16 +43,7 @@ const Player = styled.div`
 		width: 100%;
 		height: 173.81px;
 	}
-`
-
-const Logo = styled.img`
-	width: 100px;
-	height: 100px;
-	@media (max-width: 420px) {
-		width: 24.14px;
-		height: 24.14px;
-	}
-`
+` 
 
 const Button = styled.button`
 	margin: 1px 100px 39px 78px;
