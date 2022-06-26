@@ -28,7 +28,7 @@ const Container = styled.div`
 `
 
 const Play = styled.div`
-	margin: 170px 0 0 0;
+	margin: 170px 0 0 10px;
 	max-width: 1280px;
 	width: 100%;
 	height: 720px;
